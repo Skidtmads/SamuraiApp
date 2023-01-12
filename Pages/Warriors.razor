@@ -1,4 +1,4 @@
-﻿@page "/Warriors"
+﻿
 @using Microsoft.Data.SqlClient;
 @using Microsoft.Identity.Client;
 @using System;
@@ -16,8 +16,10 @@
 @using Microsoft.AspNetCore.Components.Web
 @using Microsoft.AspNetCore.Components.Web.Virtualization
 @using Microsoft.JSInterop
+@inject Warrior Warrior
+@inject NavigationManager NavManager
 
-
+@page "/Warriors"
 
 <PageTitle>Warriors</PageTitle>
 
@@ -25,17 +27,28 @@
 
 <table>
     
-    <tablebody>
-        @foreach (var item in WarriorList)
+    <thead><tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Armortype</td>
+        <td>HorseId</td>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var warrior in warriorList)
         {
-            <tablerow>
-                <tablecell>@item.Id</tablecell>
-                <tablecell>@item.Name</tablecell>
-                <tablecell>@item.ArmorType</tablecell>
-                <tablecell>@item.HorseId</tablecell>
-            </tablerow>
+            <tr>
+                <td>@warrior.Id</td>
+                <td>@warrior.Name</td>
+                <td>@warrior.Armortype</td>
+                <td>@warrior.HorseId</td>
+                @*<td>
+                    <a href="/testedit/@item.Id">Edit</a> |
+                    <a href="/Warriors" @onclick="()=> testDelete(item)">Delete</a>
+                </td>*@
+            </tr>
         }
-    </tablebody>
+    </tbody>
 </table>
 
 @code {
@@ -44,8 +57,8 @@
     {
         warriorList = Warrior.getAllWarriors();
     }
-    protected void testDelete(Warrior h)
-    {
-        Warrior.delete(h.Id);
-    }
+    //protected void testDelete(Warrior h)
+    //{
+    //    Warrior.delete(h.Id);
+    //}
 }

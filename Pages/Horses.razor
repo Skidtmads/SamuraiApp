@@ -1,5 +1,4 @@
-﻿@page "/Horses"
-@using Microsoft.Data.SqlClient;
+﻿@using Microsoft.Data.SqlClient;
 @using Microsoft.Identity.Client;
 @using System;
 @using System.Collections.Generic;
@@ -16,52 +15,43 @@
 @using Microsoft.AspNetCore.Components.Web
 @using Microsoft.AspNetCore.Components.Web.Virtualization
 @using Microsoft.JSInterop
+@inject Horses horse
+@inject NavigationManager NavManager
 
-
+@page "/¨Horses"
 
 <PageTitle>Horses</PageTitle>
 
-@using Samurai.Data
-@inject WeatherForecastService ForecastService
-
 <h1>Horses</h1>
 
-<p>This component demonstrates fetching data from a service.</p>
+<table>
 
-@if (forecasts == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <table class="table">
-        <thead>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Armortype</td>
+            <td>WarriorId</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var horse in HorseList)
+        {
             <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
+                <td>@horse.Id</td>
+                <td>@horse.Name</td>
+                <td>@horse.Armortype</td>
+                <td>@horse.WarriorId</td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var forecast in forecasts)
-            {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
+        }
+    </tbody>
+</table>
 
 @code {
-    private WeatherForecast[]? forecasts;
-
-    protected override async Task OnInitializedAsync()
+    List<Horses> warriorList = new List<Horses>();
+    protected override void OnInitialized()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        horseList = Horses.getAllHorses();
     }
+    
 }
