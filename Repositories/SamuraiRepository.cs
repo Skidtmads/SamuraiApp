@@ -70,32 +70,34 @@ namespace Samurai.Repositories
             }
         }
 
-        public void create(Samurai samurai)
+        
+
+        public void create(Models.Samurai samurai)
         {
             throw new NotImplementedException();
         }
 
-        public void update(Samurai samurai)
+        public void update(Models.Samurai samurai)
         {
             throw new NotImplementedException();
         }
 
-        public void delete(Samurai samurai)
+        public void delete(Models.Samurai samurai)
         {
             throw new NotImplementedException();
         }
 
-        public List<Samurai> getAllSamurai()
+        List<Models.Samurai> ISamurai.getAllSamurai()
         {
             throw new NotImplementedException();
         }
 
-        public Samurai getSamuraiWithHorse(int samuraiId, int HorseId)
+        Models.Samurai ISamurai.getSamuraiWithHorse(int samuraiId, int HorseId)
         {
             throw new NotImplementedException();
         }
 
-        public Samurai getSamuraiWithHorse(string samuraiName, string horseName)
+        Models.Samurai ISamurai.getSamuraiWithHorse(string samuraiName, string horseName)
         {
             throw new NotImplementedException();
         }
