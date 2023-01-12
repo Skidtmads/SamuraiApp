@@ -1,38 +1,44 @@
-﻿@page "/Warriors"
+﻿@using Microsoft.Data.SqlClient;
+@using Microsoft.Identity.Client;
+@using System;
+@using System.Collections.Generic;
+@using System.Linq;
+@using System.Text;
+@using System.Threading.Tasks;
+@using System.Data.SqlClient;
+@using Samurai;
+@using Samurai.Models;
+
+@page "/Warriors"
 
 <PageTitle>Warriors</PageTitle>
 
 <h1>Warriors</h1>
 
 <Table>
-    <TableHeader>
-        <TableRow>
-            <TableHeaderCell>Id</TableHeaderCell>
-            <TableHeaderCell>Name</TableHeaderCell>
-        </TableRow>
-    </TableHeader>
+    
     <TableBody>
-        @foreach (var Warrior in Warriors)
+        @foreach (var Warrior in Warrior)
         {
             <TableRow>
-                <TableCell>@IWarrior.Id</TableCell>
-                <TableCell>@IWarrior.Name</TableCell>
-                <Tablecell>@IWarrior.ArmorType</Tablecell>
-                <Tablecell>@IWarrior.HorseId</Tablecell>
+                <TableCell>@Warrior.Id</TableCell>
+                <TableCell>@Warrior.Name</TableCell>
+                <Tablecell>@Warrior.ArmorType</Tablecell>
+                <Tablecell>@Warrior.HorseId</Tablecell>
             </TableRow>
         }
     </TableBody>
 </Table>
 
 @code {
-    private IEnumerable<Warrior> warriors;
+    private IEnumerable<WarriorList> warriors;
 
     protected override async Task OnInitializedAsync()
     {
         warriors = await GetWarriors();
     }
 
-    private Task<IEnumerable<Warrior>> GetWarriors()
+    private Task<IEnumerable<WarriorList>> GetWarriors()
     {
         // Code to retrieve Warriors from database
     }
