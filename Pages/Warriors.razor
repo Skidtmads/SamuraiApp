@@ -22,31 +22,29 @@
 
 <h1>Warriors</h1>
 
-<Table>
+<table>
     
-    <TableBody>
-        @foreach (var Warrior in Warrior)
+    <tableBody>
+        @foreach (var item in WarriorList)
         {
-            <TableRow>
-                <TableCell>@Warrior.Id</TableCell>
-                <TableCell>@Warrior.Name</TableCell>
-                <Tablecell>@Warrior.ArmorType</Tablecell>
-                <Tablecell>@Warrior.HorseId</Tablecell>
-            </TableRow>
+            <tableRow>
+                <tableCell>@item.Id</tableCell>
+                <tableCell>@item.Name</tableCell>
+                <tablecell>@item.ArmorType</tablecell>
+                <tablecell>@item.HorseId</tablecell>
+            </tableRow>
         }
-    </TableBody>
-</Table>
+    </tableBody>
+</table>
 
 @code {
-    private IEnumerable<GetAllWarriors> warriors;
-
-    protected override async Task OnInitializedAsync()
+    List<Warrior> warriorList = new List<Warrior>();
+    protected override void OnInitialized()
     {
-        warriors = await GetWarriors();
+        warriorList = Warrior.getAllWarriors();
     }
-
-    private Task<IEnumerable<GetAllWarriors>> GetWarriors()
+    protected void testDelete(Warrior h)
     {
-        // Code to retrieve Warriors from database
+        Warrior.delete(h.Id);
     }
 }
