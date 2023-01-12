@@ -26,13 +26,13 @@ namespace Samurai.Repositories;
                 {
                     command.Connection = connection;
                     command.CommandText =
-                        "CREATE TABLE Horses (Id INT PRIMARY KEY, Name NVARCHAR(50), ArmorType NVARCHAR(50), SamuraiId INT)";
+                        "CREATE TABLE Horses (Id INT PRIMARY KEY, Name NVARCHAR(50), ArmorType NVARCHAR(50), WarriorId INT)";
                     command.ExecuteNonQuery();
                 }
             }
         }
 
-        public static void AddHorse(int id, string name, string armorType, int samuraiId)
+        public static void AddHorse(int id, string name, string armorType, int warriorId)
         {
             using (var connection = new SqlConnection("Data Source=9700K\\MSSQLSERVER01;Integrated Security=True;Connect Timeout=240;Encrypt=False;ApplicationIntent=ReadWrite"))
             {
@@ -42,17 +42,17 @@ namespace Samurai.Repositories;
                 {
                     command.Connection = connection;
                     command.CommandText =
-                        "INSERT INTO Horses (Id, Name, ArmorType, SamuraiId) VALUES (@id, @name, @armorType, @samuraiId)";
+                        "INSERT INTO Horses (Id, Name, ArmorType, WarriorId) VALUES (@id, @name, @armorType, @warriorId)";
                     command.Parameters.AddWithValue("@id", id);
                     command.Parameters.AddWithValue("@name", name);
                     command.Parameters.AddWithValue("@armorType", armorType);
-                    command.Parameters.AddWithValue("@samuraiId", samuraiId);
+                    command.Parameters.AddWithValue("@warriorId", warriorId);
                     command.ExecuteNonQuery();
                 }
             }
         }
 
-        public static void UpdateHorse(int id, string name, string armorType, int samuraiId)
+        public static void UpdateHorse(int id, string name, string armorType, int warriorId)
         {
             using (var connection = new SqlConnection("Data Source=9700K\\MSSQLSERVER01;Integrated Security=True;Connect Timeout=240;Encrypt=False;ApplicationIntent=ReadWrite"))
             {
@@ -62,11 +62,11 @@ namespace Samurai.Repositories;
                 {
                     command.Connection = connection;
                     command.CommandText =
-                        "UPDATE Horses SET Name = @name, ArmorType = @armorType, SamuraiId = @samuraiId WHERE Id = @id";
+                        "UPDATE Horses SET Name = @name, ArmorType = @armorType, WarriorId = @warriorId WHERE Id = @id";
                     command.Parameters.AddWithValue("@id", id);
                     command.Parameters.AddWithValue("@name", name);
                     command.Parameters.AddWithValue("@armorType", armorType);
-                    command.Parameters.AddWithValue("@samuraiId", samuraiId);
+                    command.Parameters.AddWithValue("@warriorId", warriorId);
                     command.ExecuteNonQuery();
                 }
             }

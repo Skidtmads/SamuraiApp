@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Samurai.Models
 {
-    public class Samurai
+    public class Warrior
     {
         public int Id { get; set; }
         public string? Name { get; set; }

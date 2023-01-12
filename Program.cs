@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Samurai.Data;
+using Samurai.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,3 +30,23 @@ app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
 app.Run();
+Horses[] horses = new Horses[]
+    {
+        new Horses { Id = 1, Name = "Kasumi", Armortype = "Chainmail", SamuraiId = 1 },
+        new Horses { Id = 2, Name = "Hikari", Armortype = "Plate", SamuraiId = 2 },
+        new Horses { Id = 3, Name = "Kaze", Armortype = "Leather", SamuraiId = 3 },
+        new Horses { Id = 4, Name = "Yukiko", Armortype = "Chainmail", SamuraiId = 4 } 
+    };
+Warrior[] samurai = new Warrior[]
+{
+    new Warrior { Id = 1, Name = "Hattori", Armortype = "Plate", WarriorId = 1 },
+    new Warrior { Id = 2, Name = "Oda", Armortype = "Leather", SamuraiId = 2},
+    new Warrior { Id = 3, Name = "Takeda", Armortype = "Chainmail", SamuraiId = 3},
+    new Warrior { Id = 4, Name = "Miyamoto", Armortype = "Leather", SamuraiId = 4}
+};
+Armortype[] armortype = new Armortype[]
+{
+    new Armortype { Id = 1, ArmorName = "Leather", ArmorClass = "Light"},
+    new Armortype { Id = 2, ArmorName = "Chainmail", ArmorClass = "Medium"},
+    new Armortype { Id = 3, ArmorName = "Plate", ArmorClass = "Heavy"}
+};

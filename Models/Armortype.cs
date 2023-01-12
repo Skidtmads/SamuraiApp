@@ -10,6 +10,6 @@ namespace Samurai.Models
     {
         public int Id { get; set; } 
         public string? ArmorName { get; set; }
-        public int SamuraiId { get; set; }
+        public string? ArmorClass { get; set; }
     }
 }

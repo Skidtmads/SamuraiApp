@@ -13,7 +13,7 @@ namespace Samurai.Models
         public void Update(Armortype armortype);
         public void Delete(Armortype armortype);
         public List<Armortype> getAllArmorType();
-        public Samurai getSamuraiWithArmortype(int samuraiId, int ArmortypeId);
+        public Warrior getWarriorWithArmortype(int WarriorId, int ArmortypeId);
         
     }
 }

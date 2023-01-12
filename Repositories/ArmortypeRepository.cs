@@ -22,13 +22,13 @@ namespace Samurai.Repositories
                 {
                     command.Connection = connection;
                     command.CommandText =
-                        "CREATE TABLE ArmorType (ArmorId INT, ArmorName NVARCHAR(50), SamuraiId INT)";
+                        "CREATE TABLE ArmorType (ArmorId INT, ArmorName NVARCHAR(50), WarriorId INT)";
                     command.ExecuteNonQuery();
                 }
             }
         }
 
-        public static void AddArmorType(int id, string name, int samuraiId)
+        public static void AddArmorType(int id, string name, int warriorId)
         {
             using (var connection = new SqlConnection("Data Source=9700K;Integrated Security=True;Connect Timeout=240;Encrypt=False;ApplicationIntent=ReadWrite"))
             {
@@ -38,16 +38,16 @@ namespace Samurai.Repositories
                 {
                     command.Connection = connection;
                     command.CommandText =
-                        "INSERT INTO ArmorType (Id, ArmorName, SamuraiId) VALUES (@id, @name, @samuraiId)";
+                        "INSERT INTO ArmorType (Id, ArmorName, WarriorId) VALUES (@id, @name, @warriorId)";
                     command.Parameters.AddWithValue("@ArmorId", id);
                     command.Parameters.AddWithValue("@ArmorName", name);
-                    command.Parameters.AddWithValue("@samuraiId", samuraiId);
+                    command.Parameters.AddWithValue("@warriorId", warriorId);
                     command.ExecuteNonQuery();
                 }
             }
         }
 
-        public static void UpdateArmorType(int id, string name, int samuraiId)
+        public static void UpdateArmorType(int id, string name, int warriorId)
         {
             using (var connection = new SqlConnection("Data Source=9700K;Integrated Security=True;Connect Timeout=240;Encrypt=False;ApplicationIntent=ReadWrite"))
             {
@@ -57,10 +57,10 @@ namespace Samurai.Repositories
                 {
                     command.Connection = connection;
                     command.CommandText =
-                        "UPDATE ArmorType SET ArmorId = @Id ArmorName = @name, SamuraiId = @samuraid";
+                        "UPDATE ArmorType SET ArmorId = @Id ArmorName = @name, WarriorId = @warriorId";
                     command.Parameters.AddWithValue("@Armorid", id);
                     command.Parameters.AddWithValue("@ArmorName", name);
-                    command.Parameters.AddWithValue("@samuraiId", samuraiId);
+                    command.Parameters.AddWithValue("@warriorId", warriorId);
                     command.ExecuteNonQuery();
                 }
             }
@@ -86,12 +86,12 @@ namespace Samurai.Repositories
             throw new NotImplementedException();
         }
 
-        public ISamurai getSamuraiWithArmortype(int samuraiId, int ArmortypeId)
+        public IWarrior getSamuraiWithArmortype(int warrioId, int ArmortypeId)
         {
             throw new NotImplementedException();
         }
 
-        Models.Samurai IArmortype.getSamuraiWithArmortype(int samuraiId, int ArmortypeId)
+        Models.Warrior IArmortype.getWarriorWithArmortype(int warriorId, int ArmortypeId)
         {
             throw new NotImplementedException();
         }
