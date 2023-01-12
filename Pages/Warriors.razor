@@ -4,15 +4,36 @@
 
 <h1>Warriors</h1>
 
-<p role="status">Current count: @currentCount</p>
-
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<Table>
+    <TableHeader>
+        <TableRow>
+            <TableHeaderCell>Id</TableHeaderCell>
+            <TableHeaderCell>Name</TableHeaderCell>
+        </TableRow>
+    </TableHeader>
+    <TableBody>
+        @foreach (var Warrior in Warriors)
+        {
+            <TableRow>
+                <TableCell>@IWarrior.Id</TableCell>
+                <TableCell>@IWarrior.Name</TableCell>
+                <Tablecell>@IWarrior.ArmorType</Tablecell>
+                <Tablecell>@IWarrior.HorseId</Tablecell>
+            </TableRow>
+        }
+    </TableBody>
+</Table>
 
 @code {
-    private int currentCount = 0;
+    private IEnumerable<Warrior> warriors;
 
-    private void IncrementCount()
+    protected override async Task OnInitializedAsync()
     {
-        currentCount++;
+        warriors = await GetWarriors();
+    }
+
+    private Task<IEnumerable<Warrior>> GetWarriors()
+    {
+        // Code to retrieve Warriors from database
     }
 }

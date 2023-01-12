@@ -16,7 +16,7 @@ namespace Samurai.Repositories
 
         public static void CreateWarriorTable()
         {
-            using (var connection = new SqlConnection("Data Source=9700K\\MSSQLSERVER01;Integrated Security=True;Connect Timeout=240;Encrypt=False;ApplicationIntent=ReadWrite"))
+            using (var connection = new SqlConnection("Data Source=9700K;Integrated Security=True;Connect Timeout=240;Encrypt=False;ApplicationIntent=ReadWrite"))
             {
                 connection.Open();
 
@@ -32,7 +32,7 @@ namespace Samurai.Repositories
 
         public static void AddWarrior(int id, string name, string armorType, int horseId)
         {
-            using (var connection = new SqlConnection("Data Source=9700K\\MSSQLSERVER01;Integrated Security=True;Connect Timeout=240;Encrypt=False;ApplicationIntent=ReadWrite"))
+            using (var connection = new SqlConnection("Data Source=9700K;Integrated Security=True;Connect Timeout=240;Encrypt=False;ApplicationIntent=ReadWrite"))
             {
                 connection.Open();
 
@@ -52,7 +52,7 @@ namespace Samurai.Repositories
 
         public static void UpdateWarrior(int id, string name, string armorType, int horseId)
         {
-            using (var connection = new SqlConnection("Data Source=9700K\\MSSQLSERVER01;Integrated Security=True;Connect Timeout=240;Encrypt=False;ApplicationIntent=ReadWrite"))
+            using (var connection = new SqlConnection("Data Source=9700K;Integrated Security=True;Connect Timeout=240;Encrypt=False;ApplicationIntent=ReadWrite"))
             {
                 connection.Open();
 
