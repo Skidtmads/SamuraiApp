@@ -6,8 +6,4 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SamuraiApp\SamuraiApp.csproj" />
-  </ItemGroup>
-
 </Project>
