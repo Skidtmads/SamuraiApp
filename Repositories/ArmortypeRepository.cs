@@ -86,7 +86,12 @@ namespace Samurai.Repositories
             throw new NotImplementedException();
         }
 
-        public Samurai getSamuraiWithArmortype(int samuraiId, int ArmortypeId)
+        public ISamurai getSamuraiWithArmortype(int samuraiId, int ArmortypeId)
+        {
+            throw new NotImplementedException();
+        }
+
+        Models.Samurai IArmortype.getSamuraiWithArmortype(int samuraiId, int ArmortypeId)
         {
             throw new NotImplementedException();
         }
