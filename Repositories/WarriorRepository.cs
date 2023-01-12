@@ -91,7 +91,7 @@ namespace Samurai.Repositories
         }
 
 
-        public void create(Models.Warrior warrior)
+        public void create(Warrior warrior)
         {
             throw new NotImplementedException();
         }
@@ -111,7 +111,7 @@ namespace Samurai.Repositories
             throw new NotImplementedException();
         }
 
-        Models.Warrior IWarrior.getWarriorWithHorse(int warriorId, int HorseId)
+        Warrior IWarrior.getWarriorWithHorse(int warriorId, int HorseId)
         {
             throw new NotImplementedException();
         }

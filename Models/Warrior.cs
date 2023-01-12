@@ -12,6 +12,28 @@ namespace Samurai.Models
         public string? Name { get; set; }
         public string? Armortype { get; set; }
         public int HorseId { get; set; }
+
+        public void create(Warrior warrior)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void update(Warrior warrior)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void delete(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Warrior> getAllWarriors()
+        {
+            throw new NotImplementedException();
+        }
+
+        
     }
 }
 
