@@ -1,4 +1,22 @@
-﻿@page "/Horses"
+﻿@using Microsoft.Data.SqlClient;
+@using Microsoft.Identity.Client;
+@using System;
+@using System.Collections.Generic;
+@using System.Linq;
+@using System.Text;
+@using System.Threading.Tasks;
+@using System.Data.SqlClient;
+@using Samurai.Models;
+@using Samurai.Repositories;
+@using System.Net.Http
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.JSInterop
+
+@page "/Horses"
 
 <PageTitle>Horses</PageTitle>
 

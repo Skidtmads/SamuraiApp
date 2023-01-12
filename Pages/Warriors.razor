@@ -6,8 +6,15 @@
 @using System.Text;
 @using System.Threading.Tasks;
 @using System.Data.SqlClient;
-@using Samurai;
 @using Samurai.Models;
+@using Samurai.Repositories;
+@using System.Net.Http
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.JSInterop
 
 @page "/Warriors"
 
@@ -31,14 +38,14 @@
 </Table>
 
 @code {
-    private IEnumerable<WarriorList> warriors;
+    private IEnumerable<GetAllWarriors> warriors;
 
     protected override async Task OnInitializedAsync()
     {
         warriors = await GetWarriors();
     }
 
-    private Task<IEnumerable<WarriorList>> GetWarriors()
+    private Task<IEnumerable<GetAllWarriors>> GetWarriors()
     {
         // Code to retrieve Warriors from database
     }

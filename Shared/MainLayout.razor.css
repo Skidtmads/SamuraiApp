@@ -2,15 +2,12 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    background-image: url('images/honor.jpg');
+    background-size: cover;
 }
 
 main {
     flex: 1;
-}
-
-.background {
-    background-image: url('images/honor.jpg');
-    background-size: cover;
 }
 
 .sidebar {
