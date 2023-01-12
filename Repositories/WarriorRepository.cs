@@ -72,7 +72,7 @@ namespace Samurai.Repositories
 
         public static void DeleteWarrior(int id, string name, string armorType, int horseId)
         {
-            using (var connection = new SqlConnection("Data Source=9700K\\MSSQLSERVER01;Integrated Security=True;Connect Timeout=240;Encrypt=False;ApplicationIntent=ReadWrite"))
+            using (var connection = new SqlConnection("Data Source=9700K;Integrated Security=True;Connect Timeout=240;Encrypt=False;ApplicationIntent=ReadWrite"))
             {
                 connection.Open();
 
