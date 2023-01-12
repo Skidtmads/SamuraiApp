@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+// Opretter Armortype table med Id, navn og type
 namespace Samurai.Models
 {
     public class Armortype

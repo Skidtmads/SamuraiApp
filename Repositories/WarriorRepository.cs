@@ -70,7 +70,26 @@ namespace Samurai.Repositories
             }
         }
 
-        
+        public static void DeleteWarrior(int id, string name, string armorType, int horseId)
+        {
+            using (var connection = new SqlConnection("Data Source=9700K\\MSSQLSERVER01;Integrated Security=True;Connect Timeout=240;Encrypt=False;ApplicationIntent=ReadWrite"))
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText =
+                        "DELETE Warrior SET Name = @name, ArmorType = @armorType, HorseId = @horseId, @samuraiId WHERE Id = @id";
+                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@name", name);
+                    command.Parameters.AddWithValue("@armorType", armorType);
+                    command.Parameters.AddWithValue("@horseId", horseId);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
 
         public void create(Models.Warrior warrior)
         {

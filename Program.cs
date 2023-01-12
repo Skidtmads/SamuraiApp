@@ -30,14 +30,16 @@ app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
 app.Run();
-Horses[] horses = new Horses[]
-    {
-        new Horses { Id = 1, Name = "Kasumi", Armortype = "Chainmail", WarriorId = 1 },
-        new Horses { Id = 2, Name = "Hikari", Armortype = "Plate", WarriorId = 2 },
-        new Horses { Id = 3, Name = "Kaze", Armortype = "Leather", WarriorId = 3 },
-        new Horses { Id = 4, Name = "Yukiko", Armortype = "Chainmail", WarriorId = 4 } 
-    };
-Warrior[] samurai = new Warrior[]
+// Oprettelse af tables, da der eikke eksisterer data i SQL i forvejen,
+// men kun er oprettet tomme skabeloner.
+Horses[] horse = new Horses[]
+{
+    new Horses { Id = 1, Name = "Kasumi", Armortype = "Chainmail", WarriorId = 1 },
+    new Horses { Id = 2, Name = "Hikari", Armortype = "Plate", WarriorId = 2 },
+    new Horses { Id = 3, Name = "Kaze", Armortype = "Leather", WarriorId = 3 },
+    new Horses { Id = 4, Name = "Yukiko", Armortype = "Chainmail", WarriorId = 4 }
+};
+Warrior[] warrior = new Warrior[]
 {
     new Warrior { Id = 1, Name = "Hattori", Armortype = "Plate", HorseId = 1 },
     new Warrior { Id = 2, Name = "Oda", Armortype = "Leather", HorseId = 2},

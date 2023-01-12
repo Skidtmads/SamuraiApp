@@ -72,6 +72,26 @@ namespace Samurai.Repositories;
             }
         }
 
+        public static void DeleteHorse(int id, string name, string armorType, int warriorId)
+        {
+            using (var connection = new SqlConnection("Data Source=9700K\\MSSQLSERVER01;Integrated Security=True;Connect Timeout=240;Encrypt=False;ApplicationIntent=ReadWrite"))
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText =
+                    "DELETE Horses SET Name = @name, ArmorType = @armorType, WarriorId = @warriorId WHERE Id = @id";
+                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@name", name);
+                    command.Parameters.AddWithValue("@armorType", armorType);
+                    command.Parameters.AddWithValue("@warriorId", warriorId);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
     public void create(Horses horses)
     {
         throw new NotImplementedException();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+// Opretter Warrior table med Id, Navn, Armortype og Heste Id
 namespace Samurai.Models
 {
     public class Warrior
