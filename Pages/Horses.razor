@@ -35,7 +35,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var horse in HorseList)
+        @foreach (var horse in HorsesList)
         {
             <tr>
                 <td>@horse.Id</td>
@@ -48,10 +48,10 @@
 </table>
 
 @code {
-    List<Horses> warriorList = new List<Horses>();
+    List<Horses> horsesList = new List<Horses>();
     protected override void OnInitialized()
     {
-        horseList = Horses.getAllHorses();
+        horsesList = Horses.getAllHorses();
     }
     
 }

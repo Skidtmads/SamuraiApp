@@ -35,7 +35,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var armortype in ArmorTypeList)
+        @foreach (var armortype in ArmortypeList)
         {
             <tr>
                 <td>@armortype.Id</td>
@@ -51,7 +51,7 @@
     List<Armortype> armortypeList = new List<Armortype>();
     protected override void OnInitialized()
     {
-        horseList = Armortype.getAllArmortype();
+        armortypeList = Armortype.getAllArmortype();
     }
 
 }
