@@ -30,8 +30,7 @@
         <tr>
             <td>Id</td>
             <td>Name</td>
-            <td>Armortype</td>
-            <td>WarriorId</td>
+            <td>Armorclass</td>
         </tr>
     </thead>
     <tbody>
@@ -40,8 +39,7 @@
             <tr>
                 <td>@armortype.Id</td>
                 <td>@armortype.Name</td>
-                <td>@armortype.Armortype</td>
-                <td>@armortype.WarriorId</td>
+                <td>@armortype.Armorclass</td>
             </tr>
         }
     </tbody>
@@ -51,7 +49,7 @@
     List<Armortype> armortypeList = new List<Armortype>();
     protected override void OnInitialized()
     {
-        armortypeList = Armortype.getAllArmortype();
+        armortypeList = Armortype.getAllArmorType();
     }
 
 }
